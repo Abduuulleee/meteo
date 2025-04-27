@@ -26,15 +26,17 @@ Application web interactive pour consulter la météo et les prévisions sur 5 j
 3. Renseigne ta clé API OpenWeatherMap dans le fichier `scripts/script.js` (variable `CONFIG.API_KEY`).
 
 ## Structure du projet
-
+```
 meteo/
 ├── index.html
 ├── scripts/
-│   └── script.js
+│ └── script.js
 ├── styles/
-│   └── styles.css
+│ └── styles.css
 ├── images/
-│   └── meteo.png
+│ └── meteo.png
+```
+
 
 ## Utilisation
 
