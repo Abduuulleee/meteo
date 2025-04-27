@@ -18,8 +18,10 @@ Application web interactive pour consulter la météo et les prévisions sur 5 j
 ## Installation
 
 1. Clone le dépôt :
-   git clone https://github.com/Abduuulleee/meteo.git
-   cd meteo
+```
+git clone https://github.com/Abduuulleee/meteo.git
+cd meteo
+```
 
 2. Ouvre `index.html` dans ton navigateur.
 
