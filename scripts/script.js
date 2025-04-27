@@ -420,8 +420,20 @@ function gererErreur(err) {
 
 // Gérer le mode sombre
 function chargerModeSombre() {
-  const estActif = localStorage.getItem("modeSombre") === "true";
-  document.body.classList.toggle("sombre", estActif);
+  // Check if user has already set a preference
+  const savedPreference = localStorage.getItem("modeSombre");
+
+  if (savedPreference === null) {
+    // If no preference saved, check system preference
+    const prefereModeSombre = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    document.body.classList.toggle("sombre", prefereModeSombre);
+    localStorage.setItem("modeSombre", prefereModeSombre);
+  } else {
+    // Use saved preference
+    document.body.classList.toggle("sombre", savedPreference === "true");
+  }
 }
 
 function toggleModeSombre() {
