@@ -1,0 +1,26 @@
+{
+  "name": "api-meteo",
+  "version": "1.0.0",
+  "description": "Un projet web pour avoir accès à la météo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abduuulleee/meteo.git"
+  },
+  "keywords": [
+    "météo",
+    "weather",
+    "api",
+    "nodejs",
+    "web"
+  ],
+  "author": "abdu.oqb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abduuulleee/meteo/issues"
+  },
+  "homepage": "https://github.com/Abduuulleee/meteo#readme"
+}

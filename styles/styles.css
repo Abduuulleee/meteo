@@ -1,0 +1,362 @@
+/* Mode clair optimisé */
+body {
+  background: #e8ecf0;
+  color: #2c3e50;
+  transition: background 0.3s;
+}
+
+.carte-meteo {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 220px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.favoris,
+.historique {
+  background: rgba(245, 247, 250, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 210, 220, 0.3);
+}
+
+/* Style de base pour les items */
+.ville-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  background: #2b3035;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #34353b;
+}
+
+.ville-item:hover {
+  background: #393b42;
+}
+
+/* Mode clair */
+body:not(.sombre) .ville-item {
+  background: rgba(236, 240, 245, 0.8);
+  border: 1px solid rgba(33, 150, 243, 0.15);
+}
+
+body:not(.sombre) .ville-item:hover {
+  background: rgba(33, 150, 243, 0.15);
+}
+
+#detailMeteo {
+  background: #f5f7fa;
+  color: #2c3e50;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e9f0;
+}
+
+.favoris h3,
+.historique h3 {
+  color: #3498db;
+}
+
+/* Input et boutons en mode clair */
+.form-control {
+  background-color: #f5f7fa;
+  border-color: #e5e9f0;
+  color: #2c3e50;
+}
+
+.form-control:focus {
+  background-color: #fff;
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.15);
+}
+
+/* Mise à jour des couleurs de texte pour une meilleure lisibilité */
+.text-muted {
+  color: #7f8c8d !important;
+}
+
+.text-primary {
+  color: #3498db !important;
+}
+
+.text-danger {
+  color: #e74c3c !important;
+}
+
+/* Mode sombre */
+body.sombre {
+  background: #212529;
+  color: #f8f9fa;
+}
+
+body.sombre .carte-meteo {
+  background: #2b3035;
+}
+
+/* Styles par défaut (clair) */
+#detailMeteo {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Mode sombre optimisé */
+body.sombre #detailMeteo {
+  background: #23242a;
+  color: #f1f1f1;
+  border: 1px solid #34353b;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+body.sombre #detailMeteo .card {
+  background: #2c2e36;
+  color: #e2e2e2;
+  border: 1px solid #393b42;
+}
+
+body.sombre #detailMeteo .btn-outline-secondary {
+  background: #23242a;
+  color: #f1f1f1;
+  border-color: #444;
+}
+body.sombre #detailMeteo .btn-outline-secondary:hover {
+  background: #393b42;
+  color: #fff;
+}
+
+/* Accentuer les couleurs pour le dark mode */
+body.sombre #detailMeteo .text-primary {
+  color: #6ec1e4 !important;
+}
+body.sombre #detailMeteo .text-danger {
+  color: #ff6b81 !important;
+}
+
+/* Pour un effet de profondeur */
+body.sombre #detailMeteo {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+/* Tablettes et petits laptops */
+@media (max-width: 992px) {
+  .container {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+  #cartesMeteo {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  .carte-meteo {
+    width: 180px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Mobiles : tout passe en colonne, input et boutons larges */
+@media (max-width: 700px) {
+  .container {
+    padding: 0 2vw;
+  }
+  #cartesMeteo {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  .carte-meteo {
+    width: 98vw;
+    max-width: 350px;
+    min-width: 0;
+    margin-bottom: 1.2rem;
+    padding: 1.2rem 0.8rem;
+  }
+  .input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .input-group input,
+  .input-group button {
+    width: 100%;
+    min-width: 0;
+    border-radius: 6px !important;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+  }
+  #titreVille {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 420px) {
+  .carte-meteo {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.3rem;
+  }
+  #titreVille {
+    font-size: 1.1rem;
+  }
+  .input-group input {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+}
+
+/* Images météo adaptatives */
+.carte-meteo img {
+  max-width: 70px;
+  width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+}
+
+/* Détail météo responsive */
+#detailMeteo .row {
+  flex-wrap: wrap;
+}
+#detailMeteo .col-md-4 {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+@media (min-width: 600px) {
+  #detailMeteo .col-md-4 {
+    flex: 1 1 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+@media (max-width: 700px) {
+  .input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  #inputVille.form-control {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+    box-sizing: border-box;
+  }
+  .input-group > .btn {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Styles pour les favoris et l'historique */
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.favoris,
+.historique {
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.favoris h3,
+.historique h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+body.sombre .favoris,
+body.sombre .historique {
+  background: #23242a;
+  border-color: #34353b;
+}
+
+body.sombre .favoris h3,
+body.sombre .historique h3 {
+  color: #f1f1f1;
+}
+
+.ville-item span {
+  color: inherit;
+}
+
+body.sombre .ville-item span {
+  color: #e2e2e2;
+}
+
+.ville-name {
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.btn-remove {
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-left: 10px;
+  opacity: 0.7;
+}
+
+.btn-remove:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+  box-shadow: 0 2px 5px rgba(255, 71, 87, 0.3);
+}
+
+.ville-item:hover .btn-remove {
+  opacity: 1;
+}
+
+/* Style pour le mode sombre */
+body.sombre .btn-remove {
+  color: #ff6b6b;
+}
+
+body.sombre .btn-remove:hover {
+  background-color: #ff6b6b;
+  color: #1e1e1e;
+}
+
+.favori-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .ville-item {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Ajout des styles pour les cartes météo */
+#cartesMeteo > * {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#cartesMeteo > *:hover {
+  transform: scale(1.02);
+}
