@@ -30,12 +30,11 @@ Application web interactive pour consulter la météo et les prévisions sur 5 j
 meteo/
 ├── index.html
 ├── scripts/
-│ └── script.js
+│   └── script.js
 ├── styles/
-│ └── styles.css
+│   └── styles.css
 ├── images/
-│ └── meteo.png
-└── ...
+│   └── meteo.png
 
 ## Utilisation
 
