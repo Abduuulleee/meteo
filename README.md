@@ -18,15 +18,17 @@ Application web interactive pour consulter la météo et les prévisions sur 5 j
 ## Installation
 
 1. Clone le dépôt :
-   git clone https://github.com/Abduuulleee/meteo.git
-   cd meteo
+```
+git clone https://github.com/Abduuulleee/meteo.git
+cd meteo
+```
 
 2. Ouvre `index.html` dans ton navigateur.
 
 3. Renseigne ta clé API OpenWeatherMap dans le fichier `scripts/script.js` (variable `CONFIG.API_KEY`).
 
 ## Structure du projet
-
+```
 meteo/
 ├── index.html
 ├── scripts/
@@ -35,7 +37,8 @@ meteo/
 │ └── styles.css
 ├── images/
 │ └── meteo.png
-└── ...
+```
+
 
 ## Utilisation
 
