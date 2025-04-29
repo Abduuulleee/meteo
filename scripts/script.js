@@ -164,6 +164,9 @@ function afficherHistorique() {
     .join("");
 }
 
+// Options de défilement réutilisables
+const SCROLL_OPTIONS = { behavior: "smooth", block: "nearest" };
+
 // Initialisation
 document.addEventListener("DOMContentLoaded", () => {
   chargerModeSombre();
@@ -297,6 +300,11 @@ function afficherMeteo(donnees, nomVille) {
 
       elements.cartesMeteo.appendChild(carte);
     });
+
+  // Ajouter le scroll automatique après l'affichage des cartes
+  setTimeout(() => {
+    elements.cartesMeteo.scrollIntoView(SCROLL_OPTIONS);
+  }, 100);
 }
 
 // Grouper les prévisions par jour
@@ -328,8 +336,21 @@ function afficherDetailsMeteo(date) {
   detailMeteo.id = "detailMeteo";
   detailMeteo.className = "mt-4 p-3 border rounded";
 
-  // Ajouter au DOM
-  elements.cartesMeteo.after(detailMeteo);
+  // Vérifier la largeur de l'écran
+  const isMobile = window.innerWidth < 800;
+
+  // Trouver la carte cliquée
+  const carteCliquee = Array.from(elements.cartesMeteo.children).find(
+    (carte) => carte.dataset.date === date
+  );
+
+  if (isMobile && carteCliquee) {
+    // Sur mobile, insérer les détails juste après la carte cliquée
+    carteCliquee.after(detailMeteo);
+  } else {
+    // Sur desktop, ajouter les détails après toutes les cartes
+    elements.cartesMeteo.after(detailMeteo);
+  }
 
   try {
     // Filtrer les prévisions pour cette date
