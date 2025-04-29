@@ -6,7 +6,7 @@ body {
 }
 
 .carte-meteo {
-  background: #f5f7fa;
+  background: rgba(236, 240, 245, 0.8);
   border-radius: 12px;
   padding: 1.5rem;
   width: 220px;
